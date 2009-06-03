@@ -47,7 +47,7 @@ module IsTaggable
     module InstanceMethods
       def set_tag_list(kind, list)
         tag_list = TagList.new(list)
-        instance_variable_set(tag_list_name_for_kind(kind), tag_list)
+        instance_variable_set(tag_list_name_for_kind(kind), tag_list.uniq)
       end
 
       def get_tag_list(kind)
